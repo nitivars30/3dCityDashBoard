@@ -1,0 +1,27 @@
+# ----- Node / Frontend -----
+**/node_modules/
+frontend/dist/
+frontend/.vite/
+frontend/.cache/
+frontend/.DS_Store
+
+# keep exactly ONE lockfile depending on your package manager
+bun.lockb
+pnpm-lock.yaml
+yarn.lock
+
+# ----- Python / Backend -----
+backend/.venv/
+backend/__pycache__/
+**/*.pyc
+
+# DB & local artifacts
+backend/city3d.sqlite
+
+# Env & secrets (never commit)
+**/.env
+backend/config.py
+
+# Misc
+.DS_Store
+*.zip

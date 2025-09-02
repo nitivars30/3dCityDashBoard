@@ -1,0 +1,213 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Urban Design Dashboard - Professional GIS Theme */
+
+@layer base {
+  :root {
+    /* Urban Planning Color Palette */
+    --background: 210 25% 98%;
+    --foreground: 210 20% 15%;
+
+    --card: 210 25% 97%;
+    --card-foreground: 210 20% 15%;
+
+    --popover: 210 25% 98%;
+    --popover-foreground: 210 20% 15%;
+
+    /* Primary - Professional Blue */
+    --primary: 200 95% 35%;
+    --primary-foreground: 0 0% 100%;
+    --primary-hover: 200 95% 30%;
+    --primary-glow: 200 90% 65%;
+
+    /* Secondary - Urban Teal */
+    --secondary: 180 85% 45%;
+    --secondary-foreground: 0 0% 100%;
+    --secondary-hover: 180 85% 40%;
+
+    /* Accent - Highlight Orange */
+    --accent: 35 100% 55%;
+    --accent-foreground: 0 0% 100%;
+    --accent-hover: 35 100% 50%;
+
+    --muted: 210 15% 92%;
+    --muted-foreground: 210 10% 45%;
+
+    --destructive: 0 84% 55%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 210 15% 88%;
+    --input: 210 15% 94%;
+    --ring: 200 95% 35%;
+
+    --radius: 0.75rem;
+
+    /* Urban Dashboard Specific Colors */
+    --building-default: 210 15% 75%;
+    --building-selected: 200 95% 55%;
+    --building-highlighted: 35 100% 60%;
+    --ground: 120 20% 25%;
+    --water: 200 100% 45%;
+
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(200 95% 35%), hsl(200 90% 45%));
+    --gradient-secondary: linear-gradient(135deg, hsl(180 85% 45%), hsl(180 80% 55%));
+    --gradient-urban: linear-gradient(180deg, hsl(210 25% 98%), hsl(210 20% 94%));
+
+    /* Shadows */
+    --shadow-glow: 0 0 30px hsl(200 90% 65% / 0.4);
+    --shadow-building: 0 8px 32px hsl(210 20% 15% / 0.15);
+    --shadow-elevated: 0 20px 60px hsl(210 20% 15% / 0.2);
+
+    /* Animation */
+    --transition-smooth: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    --transition-building: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    /* Dark Theme for Urban Dashboard */
+    --background: 210 30% 8%;
+    --foreground: 210 15% 92%;
+
+    --card: 210 25% 10%;
+    --card-foreground: 210 15% 92%;
+
+    --popover: 210 25% 10%;
+    --popover-foreground: 210 15% 92%;
+
+    --primary: 200 90% 55%;
+    --primary-foreground: 210 30% 8%;
+    --primary-hover: 200 90% 60%;
+    --primary-glow: 200 85% 70%;
+
+    --secondary: 180 80% 55%;
+    --secondary-foreground: 210 30% 8%;
+    --secondary-hover: 180 80% 60%;
+
+    --accent: 35 95% 65%;
+    --accent-foreground: 210 30% 8%;
+    --accent-hover: 35 95% 70%;
+
+    --muted: 210 20% 15%;
+    --muted-foreground: 210 15% 65%;
+
+    --destructive: 0 75% 60%;
+    --destructive-foreground: 210 30% 8%;
+
+    --border: 210 20% 18%;
+    --input: 210 25% 12%;
+    --ring: 200 90% 55%;
+
+    /* Dark Urban Colors */
+    --building-default: 210 15% 35%;
+    --building-selected: 200 90% 65%;
+    --building-highlighted: 35 95% 70%;
+    --ground: 120 25% 15%;
+    --water: 200 95% 35%;
+
+    /* Dark Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(200 90% 55%), hsl(200 85% 65%));
+    --gradient-secondary: linear-gradient(135deg, hsl(180 80% 55%), hsl(180 75% 65%));
+    --gradient-urban: linear-gradient(180deg, hsl(210 30% 8%), hsl(210 25% 12%));
+
+    /* Dark Shadows */
+    --shadow-glow: 0 0 40px hsl(200 85% 70% / 0.3);
+    --shadow-building: 0 12px 40px hsl(210 30% 5% / 0.4);
+    --shadow-elevated: 0 24px 80px hsl(210 30% 5% / 0.5);
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+
+  /* 3D Canvas Styles */
+  .canvas-container {
+    background: var(--gradient-urban);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-elevated);
+  }
+
+  /* Building Animation */
+  .building-hover {
+    transition: var(--transition-building);
+    transform-origin: bottom center;
+  }
+
+  .building-hover:hover {
+    transform: scale(1.02) translateY(-2px);
+    box-shadow: var(--shadow-glow);
+  }
+
+  /* Dashboard Animations */
+  .fade-in {
+    animation: fadeIn 0.6s ease-out;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .glow {
+    box-shadow: var(--shadow-glow);
+  }
+
+  /* Scrollbar Styling */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: hsl(var(--muted));
+    border-radius: var(--radius);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: hsl(var(--primary));
+    border-radius: var(--radius);
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--primary-hover));
+  }
+}
