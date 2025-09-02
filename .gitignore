@@ -14,6 +14,21 @@ yarn.lock
 backend/.venv/
 backend/__pycache__/
 **/*.pyc
+# DB sidecars
+backend/city3d.sqlite*
+# any venv anywhere
+**/.venv/
+
+# Frontend envs (never commit)
+frontend/.env
+frontend/.env.*
+# Misc editor/diagnostic caches
+.vscode/
+.idea/
+.eslintcache
+.pytest_cache/
+.mypy_cache/
+coverage/
 
 # DB & local artifacts
 backend/city3d.sqlite
